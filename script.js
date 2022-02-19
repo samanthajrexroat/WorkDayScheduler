@@ -1,10 +1,23 @@
 // Declaring variables
 var containerEl = $(".container")
-
+var textAreaEl = $("#text-box");
 
 // Set today's date in the header
 var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do"));
+
+for (i = 0; i< textAreaEl.length; i++){
+
+    var idName = textAreaEl[i].id;
+    console.log(idName);
+    var agendaText = localStorage.getItem(idName);
+    console.log(agendaText);
+    if (agendaText) {
+        textAreaEl[i].value = agendaText;
+    }
+}
+
+
 
 // Use color coding to display past, present, and future
 function timeTracker() {
@@ -17,7 +30,6 @@ function timeTracker() {
 
         var currentHour = parseInt ($(this).attr("id"));
         
-        console.log(currentHour);
         
             // To check the time and add the classes for background indicators
         if (currentHour < hour) {
@@ -42,6 +54,9 @@ timeTracker()
 containerEl.on("click", ".saveBtn", function (event) {
     // Capture the value from the text area in an object.
     var newItem = $(event.target).prev("#text-box").val();
-    console.log(newItem);
+    // Capture the time in which the new object was placed.
+    var itemTime = $(event.target).parent().attr("id");
+    // Set these into local storage
+    localStorage.setItem(newItem, itemTime);
+});
 
-})
