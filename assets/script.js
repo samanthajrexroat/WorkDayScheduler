@@ -10,7 +10,7 @@ $("#currentDay").text(today.format("dddd, MMMM Do"));
 
 $(document).ready(function(){
 // On a click event for the save icon buttons:
-    containerEl.on("click", ".saveBtn", function (event) {
+    $(".saveBtn").on("click", function(event) {
         // Capture the value from the text area in an object.
         var newItem = $(event.target).prev("#text-box").val();
         // Capture the time in which the new object was placed.

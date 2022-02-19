@@ -28,3 +28,7 @@ A simple calendar application that allows a user to save events for each hour of
 * Moment.js
 
 ## Screenshots
+
+![Work Day Scheduler landing page](/assets/screenshots/WorkDaySch-Landing.png "Work Day Scheduler Landing Page")
+
+![Work Day Scheduler local storage persistance](/assets/screenshots/WorkDaySch-Store.png "Work Day Scheduler Local Storage Persistance")
