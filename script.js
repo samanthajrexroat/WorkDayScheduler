@@ -1,6 +1,6 @@
 // Declaring variables
 var containerEl = $(".container")
-var textAreaEl = $("#text-box");
+var textAreaEl = $("textarea");
 var timeBlockEl = $(".time-block");
 
 // Set today's date in the header
@@ -29,6 +29,7 @@ $(document).ready(function(){
              textAreaEl[i].value = itemText;
         }
     }
+})
 
     // Use color coding to display past, present, and future
     function timeTracker() {
@@ -60,7 +61,7 @@ $(document).ready(function(){
     }
     timeTracker();
 
-})
+
 
 
 
